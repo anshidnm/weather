@@ -22,6 +22,7 @@ $(document).ready(function(){
             $("#temp").text("")
             $("#weath").text("")
             $("#icn").attr("src","")
+            $("#desc").text("")
         })
 
         function format(jsonObj){
@@ -29,9 +30,11 @@ $(document).ready(function(){
             var city_weather=jsonObj.weather[0].main
             var tempreture=jsonObj.main.temp
             var imgurl  = 'http://openweathermap.org/img/wn/' + jsonObj.weather[0].icon + '@2x.png';
+            var desc=jsonObj.weather[0].description
             $("#city_name").text(city)
             $("#temp").text(tempreture+" celcius")
             $("#weath").text(city_weather)
+            $("#desc").text(desc)
             $("#icn").attr("src",imgurl)
         }
     }
